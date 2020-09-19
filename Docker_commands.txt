@@ -1,0 +1,9 @@
+  655  docker build -t web_cust_mvc:1.8 .
+  503  docker run -d -it --network network1 --name mysqlWebCustC -p 3306:3306 -e "MYSQL_ROOT_PASSWORD=springstudent" -e "MYSQL_USER=springstudent" -e "MYSQL_PASSWORD=springstudent" -e "MYSQL_DATABASE=web_customer_tracker" mysql:5.7
+  504  docker ps
+  505  docker run -d -it --network network1 --name webCustomerC -p 8080:8080 web_cust_mvc:1.8
+  506  docker ps
+  507  docker inspect network1
+  508  docker ps
+  509  winpty docker exec -it mysqlWebCustC bash
+  510  mysql -uroot -p
